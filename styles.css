@@ -20,7 +20,7 @@ a {
 
 .container {
     width: 100%;
-    min-width: 1170px;
+    max-width: 1440px; /* nhớ giới hạn tối đa width */
     margin-left: auto;
     margin-right: auto;
     padding-left: 135px;
@@ -157,6 +157,10 @@ nav {
 
 /* Tablet */
 @media (max-width: 768px) {
+    .container {
+        padding-inline: 12px;
+    }
+
     .nav__list {
         gap: 10px;
     }
@@ -201,7 +205,7 @@ nav {
 /* Mobile */
 @media (max-width: 480px) {
     .container {
-        padding-inline: 16px;
+        padding-inline: 8px;
     }
 
     .hero {
