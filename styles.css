@@ -1,0 +1,221 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Common */
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 100%;
+    min-width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 135px;
+    padding-right: 135px;
+    margin-top: 26px;
+}
+
+.btn {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #000958;
+    opacity: 0.7;
+    color: #000958;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: lightcoral;
+    cursor: pointer;
+}
+
+/* Header */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav__list {
+    display: flex;
+    gap: 30px;
+}
+
+.nav__link {
+    padding: 4px;
+    color: #5e6085;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1;
+    transition: scale 0.2s ease, color 0.2s;
+}
+
+.nav__link:hover {
+    /* font-weight: 700; dùng font-weight khi hover sẽ bị giật nhẹ => dùng scale + color */
+    scale: 1.05;
+    color: #000;
+}
+
+/* Hero */
+.hero {
+    display: flex;
+    padding-top: 120px;
+}
+
+.block__imgs {
+    position: relative;
+    max-width: 388px; /* hoặc 100% nếu responsive toàn phần */
+    width: 100%;
+    aspect-ratio: 388 / 488; /* nếu muốn giữ khung như hình mèo */
+    border: 1px solid blue;
+}
+
+.cat__bg {
+    width: 100%;
+    border-radius: 4%;
+    background: linear-gradient(180deg, #ffa78d 0%, #ff8c60 100%);
+    box-shadow: 11px 18px 65px 0px rgba(255, 155, 121, 0.12);
+    overflow: hidden;
+}
+
+.cat__bg img {
+    top: 60px;
+    left: 4px;
+    width: 100%;
+    object-fit: contain;
+    scale: 1.8;
+    rotate: 5deg;
+    translate: 3% 15%;
+}
+
+.pattern1 {
+    position: absolute;
+    bottom: 2%;
+    left: -20%;
+    z-index: -1;
+    aspect-ratio: 1 / 1;
+    max-width: 230px;
+    width: 100%;
+    background-image: url(./assets/pattern1.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.pattern2 {
+    position: absolute;
+    top: 4%;
+    right: -11%;
+    z-index: -1;
+    aspect-ratio: 50.346 / 100.83;
+    max-width: 50.346px;
+    width: 100%;
+    background-image: url(./assets/pattern2.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.dog__bg {
+    position: absolute;
+    bottom: -15%;
+    right: -40%;
+    aspect-ratio: 186 / 244;
+    max-width: 186px;
+    width: 47.94%;
+    border-radius: 4%;
+    border: 2px solid rgba(255, 255, 255, 0.65);
+    background: linear-gradient(206deg, #faa7ad 4.68%, #e87f8a 98.09%);
+    box-shadow: 8px 18px 36px -6px rgba(234, 148, 157, 0.17);
+    overflow: hidden;
+}
+
+.dog__bg img {
+    top: 104px;
+    left: -40px;
+    max-width: 100%;
+    object-fit: contain;
+    scale: 2.2;
+    translate: -22% 85%;
+}
+
+/* Responsive */
+
+/* Tablet */
+@media (max-width: 768px) {
+    .nav__list {
+        gap: 10px;
+    }
+
+    .nav__link {
+        color: red;
+        font-size: 1.2rem;
+    }
+
+    .btn {
+        padding: 4px 8px;
+        font-size: 1.2rem;
+    }
+
+    .pattern1,
+    .pattern2 {
+        display: none;
+    }
+
+    .hero__imgs {
+        width: 80%;
+    }
+}
+
+/* Tablet && Mobile */
+@media (max-width: 580px) {
+    .group__nav {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .nav__list {
+        display: none;
+    }
+
+    .hamberger__bar {
+        display: block;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .container {
+        padding-inline: 16px;
+    }
+
+    .hero {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .pattern1,
+    .pattern2 {
+        display: block;
+    }
+
+    nav .btn {
+        display: none;
+    }
+}
